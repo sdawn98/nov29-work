@@ -42,8 +42,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - How many times are you calling each callback function?
 *******************************************************************************/
 
-let selectiveMap = function() {
-
+let selectiveMap = function(arr, cb1, cb2) {
+    let res = [];
+    arr.forEach(function (num) {
+        if (cb1(num) === true)  {
+            res.push(cb2(num))
+        } else {
+            res.push(num);
+        }
+    })
+    return res;
 };
 
 
